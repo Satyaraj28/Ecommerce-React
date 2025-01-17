@@ -24,17 +24,17 @@ const Products = () => {
       setLoading(true);
       try {
         // Fetch products
-        const productRes = await fetch("https://fakestoreapi.com/products/");
+        const productRes = await fetch("http://localhost:5120/api/products/");
         const productData = await productRes.json();
         setProducts(productData);
         setFilter(productData);
+        console.log("Fetched Products:", productData);  // Log product data
 
         // Fetch categories
-        const categoryRes = await fetch(
-          "https://fakestoreapi.com/products/categories"
-        );
+        const categoryRes = await fetch("http://localhost:5120/api/products/category");
         const categoryData = await categoryRes.json();
-        setCategories(["All", ...categoryData]);
+        console.log("Fetched Categories:", categoryData);  // Log category data
+        setCategories(["All", ...categoryData]);  // Assuming categoryData is an array of category names
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -47,10 +47,13 @@ const Products = () => {
 
   const filterProducts = (category) => {
     if (category === "All") {
-      setFilter(products);
+      setFilter(products);  // Show all products
     } else {
-      const filtered = products.filter((product) => product.category === category);
-      setFilter(filtered);
+      const filtered = products.filter(
+        (product) => product.category.name === category  // Assuming category is an object with 'name' field
+      );
+      console.log("Filtered Products:", filtered);  // Log filtered products
+      setFilter(filtered);  // Update state with filtered products
     }
   };
 
@@ -71,7 +74,7 @@ const Products = () => {
           <button
             key={category}
             className="btn btn-outline-dark btn-sm mx-2"
-            onClick={() => filterProducts(category)}
+            onClick={() => filterProducts(category)}  // Filter products by category
           >
             {category}
           </button>
@@ -80,8 +83,7 @@ const Products = () => {
 
       <div className="row">
         {filter.map((product) => {
-          const { id, title, description, price, image, rating, category } =
-            product;
+          const { id, title, description, price, image, rating, category } = product;
 
           return (
             <div className="col-md-4 col-sm-6 col-xs-8 mb-4" key={id}>
@@ -102,7 +104,7 @@ const Products = () => {
                       ? `${description.substring(0, 60)}...`
                       : description}
                   </p>
-                  <span className="badge bg-primary mb-2">{category}</span>
+                  <span className="badge bg-primary mb-2">{category.name}</span>
                   <div className="d-flex justify-content-center align-items-center">
                     <span className="text-warning me-2">
                       {"★".repeat(Math.round(rating.rate))}
