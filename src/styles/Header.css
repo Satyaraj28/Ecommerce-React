@@ -1,0 +1,35 @@
+/* Header.css */
+.navbar {
+  background-color: #ffffff; /* Clean white background */
+}
+
+.navbar-brand {
+  color: #007bff; /* Primary blue color */
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #343a40;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: #fff;
+}

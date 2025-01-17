@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navbar } from "../components";
+import { Header } from "../components";
 
 const PageNotFound = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       <div className="container my-3 py-3">
         <div className="container">
           <div className="row">

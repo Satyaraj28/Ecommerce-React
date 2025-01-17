@@ -1,44 +1,50 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Footer, Navbar } from "../components";
+import { Footer, Header } from "../components";
+import '../styles/login.css'; // Import the CSS for login page
 
 const Login = () => {
   return (
     <>
-      <Navbar />
-      <div className="container my-3 py-3">
-        <h1 className="text-center">Login</h1>
-        <hr />
-        <div class="row my-4 h-100">
-          <div className="col-md-4 col-lg-4 col-sm-8 mx-auto">
-            <form>
-              <div class="my-3">
-                <label for="display-4">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="floatingInput"
-                  placeholder="name@example.com"
-                />
+      <Header />
+      <div className="container my-5 py-5">
+        <h1 className="text-center text-primary mb-4">Login to Your Account</h1>
+        <div className="row justify-content-center align-items-center h-100">
+          <div className="col-md-6 col-lg-5 col-sm-8 mx-auto">
+            <div className="card shadow-lg border-0 rounded">
+              <div className="card-body">
+                <form>
+                  <div className="form-group my-3">
+                    <label htmlFor="floatingInput" className="form-label">Email Address</label>
+                    <input
+                      type="email"
+                      className="form-control form-control-lg"
+                      id="floatingInput"
+                      placeholder="name@example.com"
+                      required
+                    />
+                  </div>
+                  <div className="form-group my-3">
+                    <label htmlFor="floatingPassword" className="form-label">Password</label>
+                    <input
+                      type="password"
+                      className="form-control form-control-lg"
+                      id="floatingPassword"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+                  <div className="my-3">
+                    <p>New here? <Link to="/register" className="text-decoration-underline text-info">Register</Link></p>
+                  </div>
+                  <div className="text-center">
+                    <button className="btn btn-lg btn-dark my-3 w-100" type="submit" disabled>
+                      Login
+                    </button>
+                  </div>
+                </form>
               </div>
-              <div class="my-3">
-                <label for="floatingPassword display-4">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="floatingPassword"
-                  placeholder="Password"
-                />
-              </div>
-              <div className="my-3">
-                <p>New Here? <Link to="/register" className="text-decoration-underline text-info">Register</Link> </p>
-              </div>
-              <div className="text-center">
-                <button class="my-2 mx-auto btn btn-dark" type="submit" disabled>
-                  Login
-                </button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

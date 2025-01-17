@@ -1,0 +1,57 @@
+/* login.css */
+
+/* Basic container adjustments */
+.container {
+    max-width: 800px;
+  }
+  
+  /* Centering the content */
+  .text-center {
+    text-align: center !important;
+  }
+  
+  /* Form styling */
+  .form-label {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .form-control {
+    border-radius: 0.5rem;
+    padding: 10px;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button styling */
+  button {
+    font-size: 1.1rem;
+    border-radius: 1.2rem;
+    padding: 12px 20px;
+  }
+  
+  /* Styling for links */
+  a.text-info {
+    font-weight: bold;
+  }
+  
+  /* Card Styling */
+  .card {
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  /* Responsive adjustments for small screens */
+  @media (max-width: 768px) {
+    .col-md-6 {
+      width: 100%;
+    }
+    .col-sm-8 {
+      width: 100%;
+    }
+  }
+  
