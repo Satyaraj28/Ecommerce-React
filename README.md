@@ -3,10 +3,6 @@
 A Ecommerce Website made with React.js Framework.
 
 
-## Demo
-
-https://reactjs-ecommerce-app.vercel.app/
-
 ## Features
 
 - Easy to integrate with Backend
@@ -15,7 +11,8 @@ https://reactjs-ecommerce-app.vercel.app/
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/fQ293tm/image.png)
+![App Screenshot](<img width="939" alt="image" src="https://github.com/user-attachments/assets/18c8b3d9-40e3-4555-bc4e-6e143de84ad6" />
+)
 
 
 
