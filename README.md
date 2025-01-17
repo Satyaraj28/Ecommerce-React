@@ -11,7 +11,7 @@ A Ecommerce Website made with React.js Framework.
 
 ## Screenshots
 
-![App Screenshot]()
+![App Screenshot](https://github.com/Satyaraj28/Ecommerce-React/blob/main/Screenshot.png)
 
 
 
