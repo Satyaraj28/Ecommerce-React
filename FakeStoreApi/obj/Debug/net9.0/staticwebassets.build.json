@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "IB3W+QN9S71CKfdijdLzVXBn2a32wN1xbadA16ZbnQY=",
+  "Source": "FakeStoreApi",
+  "BasePath": "_content/FakeStoreApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,61 @@
+# Fetch all products
+GET http://localhost:5120/api/products
+Accept: application/json
+
+# Fetch a product by ID
+GET http://localhost:5120/api/products/1
+Accept: application/json
+
+# Fetch a non-existing product (ID 9999)
+GET http://localhost:5120/api/products/9999
+Accept: application/json
+
+# Create a new product
+POST http://localhost:5120/api/products
+Content-Type: application/json
+{
+    "title": "New Product Example",
+    "price": 99.99,
+    "description": "This is a new product added through API.",
+    "category": "electronics",
+    "image": "https://example.com/new-product-image.jpg",
+    "rating": {
+        "rate": 4.5,
+        "count": 50
+    }
+}
+
+# Update a product (ID 1)
+PUT http://localhost:5120/api/products/1
+Content-Type: application/json
+{
+    "id": 1,
+    "title": "Updated Product Example",
+    "price": 79.99,
+    "description": "This product has been updated with new details.",
+    "category": "electronics",
+    "image": "https://example.com/updated-product-image.jpg",
+    "rating": {
+        "rate": 4.7,
+        "count": 60
+    }
+}
+
+# Delete a product by ID (ID 1)
+DELETE http://localhost:5120/api/products/1
+Accept: application/json
+
+# Create another new product
+POST http://localhost:5120/api/products
+Content-Type: application/json
+{
+    "title": "Another New Product",
+    "price": 120.00,
+    "description": "This is another example of creating a new product.",
+    "category": "clothing",
+    "image": "https://example.com/another-new-product.jpg",
+    "rating": {
+        "rate": 4.2,
+        "count": 75
+    }
+}
