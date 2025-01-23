@@ -1,30 +1,20 @@
-/* Ensure uniform image size across all products */
-.card-img-top {
-    width: 100%;
-    height: 250px; /* Fixed height */
-    object-fit: cover; /* Ensures aspect ratio is maintained */
-  }
-  
-  /* Styling for card title (product name) */
-  .card-title {
-    font-size: 1.1rem; /* Adjust font size */
-    font-weight: bold;
-    color: #333; /* Ensure text is dark and readable */
-    text-overflow: ellipsis; /* Adds '...' when text is too long */
-    overflow: hidden; /* Ensures truncation */
-    white-space: nowrap; /* Prevents wrapping */
-  }
-  
-  /* Optional: Additional styling for price and button */
-  .card-text strong {
-    font-size: 1.2rem;
-    color: #000;
-  }
-  
-  .btn {
-    font-size: 1rem;
-    padding: 10px;
-    background-color: #d5d5e4;
-    border: none;
-  }
-  
+/* Style the search container */
+.search-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-container input {
+  font-size: 1rem;
+  padding: 10px;
+  width: 100%;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  margin-top: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #007bff;
+}

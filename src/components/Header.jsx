@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useWishlist } from "../context/WishlistContext";
 
 const Header = () => {
   const cartItems = useSelector((state) => state.handleCart);
+  const { wishlist } = useWishlist();
 
   return (
     <header className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
@@ -35,20 +37,30 @@ const Header = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link text-dark fw-semibold mx-2" to="/product">
+              <NavLink
+                className="nav-link text-dark fw-semibold mx-2"
+                to="/product"
+              >
                 Products
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link text-dark fw-semibold mx-2" to="/about">
+              <NavLink
+                className="nav-link text-dark fw-semibold mx-2"
+                to="/about"
+              >
                 About
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link text-dark fw-semibold mx-2" to="/contact">
+              <NavLink
+                className="nav-link text-dark fw-semibold mx-2"
+                to="/contact"
+              >
                 Contact
               </NavLink>
             </li>
+           
           </ul>
 
           {/* Action Buttons */}
@@ -66,6 +78,13 @@ const Header = () => {
               aria-label="Register"
             >
               <i className="fas fa-user-plus me-2"></i>Register
+            </NavLink>
+            <NavLink
+              to="/wishlist"
+              className="btn btn-outline-success rounded-pill px-3 me-2"
+              aria-label="Wishlist"
+            >
+              <i className="fas fa-heart me-2"></i>Wishlist ({wishlist.length})
             </NavLink>
             <NavLink
               to="/cart"

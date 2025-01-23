@@ -1,40 +1,47 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
+import { useWishlist } from "../context/WishlistContext"; // Import Wishlist context
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import "../styles/Products.css"; // Add a CSS file for product page styling if needed
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [filter, setFilter] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [debouncedSearchQuery, setDebouncedSearchQuery] = useState("");
 
   const dispatch = useDispatch();
+  const { addToWishlist } = useWishlist(); // Destructure addToWishlist from WishlistContext
 
   const addProduct = (product) => {
     dispatch(addCart(product));
     toast.success("Added to cart!");
   };
 
+  // Add product to wishlist function
+  const handleAddToWishlist = (product) => {
+    addToWishlist(product); // Call the context function to add product to wishlist
+    toast.success("Added to wishlist!");
+  };
+
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        // Fetch products
         const productRes = await fetch("http://localhost:5120/api/products/");
         const productData = await productRes.json();
         setProducts(productData);
         setFilter(productData);
-        console.log("Fetched Products:", productData);  // Log product data
 
-        // Fetch categories
         const categoryRes = await fetch("http://localhost:5120/api/products/category");
         const categoryData = await categoryRes.json();
-        console.log("Fetched Categories:", categoryData);  // Log category data
-        setCategories(["All", ...categoryData]);  // Assuming categoryData is an array of category names
+        setCategories(["All", ...categoryData]);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -45,15 +52,33 @@ const Products = () => {
     fetchProducts();
   }, []);
 
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setDebouncedSearchQuery(searchQuery);
+    }, 500); // Delay in ms (500ms debounce)
+
+    return () => clearTimeout(timeoutId);
+  }, [searchQuery]);
+
+  useEffect(() => {
+    if (debouncedSearchQuery === "") {
+      setFilter(products); // If no search, show all products
+    } else {
+      const filtered = products.filter((product) =>
+        product.title.toLowerCase().includes(debouncedSearchQuery.toLowerCase())
+      );
+      setFilter(filtered);
+    }
+  }, [debouncedSearchQuery, products]);
+
   const filterProducts = (category) => {
     if (category === "All") {
-      setFilter(products);  // Show all products
+      setFilter(products); // Show all products
     } else {
       const filtered = products.filter(
-        (product) => product.category.name === category  // Assuming category is an object with 'name' field
+        (product) => product.category.name === category
       );
-      console.log("Filtered Products:", filtered);  // Log filtered products
-      setFilter(filtered);  // Update state with filtered products
+      setFilter(filtered);
     }
   };
 
@@ -74,11 +99,22 @@ const Products = () => {
           <button
             key={category}
             className="btn btn-outline-dark btn-sm mx-2"
-            onClick={() => filterProducts(category)}  // Filter products by category
+            onClick={() => filterProducts(category)}
           >
             {category}
           </button>
         ))}
+      </div>
+
+      <div className="search-container mb-4">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search products..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          autoFocus
+        />
       </div>
 
       <div className="row">
@@ -125,6 +161,12 @@ const Products = () => {
                     onClick={() => addProduct(product)}
                   >
                     Add to Cart
+                  </button>
+                  <button
+                    className="btn btn-outline-success m-1"
+                    onClick={() => handleAddToWishlist(product)} // Add to wishlist functionality
+                  >
+                    Add to Wishlist
                   </button>
                 </div>
               </div>

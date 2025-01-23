@@ -13,18 +13,18 @@ Accept: application/json
 # Create a new product
 POST http://localhost:5120/api/products
 Content-Type: application/json
-{
-    "title": "New Product Example",
-    "price": 99.99,
-    "description": "This is a new product added through API.",
-    "category": "electronics",
-    "image": "https://example.com/new-product-image.jpg",
+ {
+    "id": 5,
+    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    "price": 695,
+    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
     "rating": {
-        "rate": 4.5,
-        "count": 50
+      "rate": 4.6,
+      "count": 400
     }
-}
-
+ }
 # Update a product (ID 1)
 PUT http://localhost:5120/api/products/1
 Content-Type: application/json

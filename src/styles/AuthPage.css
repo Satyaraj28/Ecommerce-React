@@ -1,0 +1,27 @@
+/* AuthPage.css */
+.auth-container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  button {
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  button.google {
+    background-color: #4285f4;
+    color: white;
+  }
+  
+  button.microsoft {
+    background-color: #0078d4;
+    color: white;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  

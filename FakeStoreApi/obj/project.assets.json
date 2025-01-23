@@ -5176,11 +5176,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Breaking bad\\React Projects\\React_E-Commerce\\FakeStoreApi\\FakeStoreApi.csproj",
+      "projectUniqueName": "C:\\Users\\Breaking bad\\React Projects\\React_E-Commerce\\Ecommerce-React\\FakeStoreApi\\FakeStoreApi.csproj",
       "projectName": "FakeStoreApi",
-      "projectPath": "C:\\Users\\Breaking bad\\React Projects\\React_E-Commerce\\FakeStoreApi\\FakeStoreApi.csproj",
+      "projectPath": "C:\\Users\\Breaking bad\\React Projects\\React_E-Commerce\\Ecommerce-React\\FakeStoreApi\\FakeStoreApi.csproj",
       "packagesPath": "C:\\Users\\Breaking bad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Breaking bad\\React Projects\\React_E-Commerce\\FakeStoreApi\\obj\\",
+      "outputPath": "C:\\Users\\Breaking bad\\React Projects\\React_E-Commerce\\Ecommerce-React\\FakeStoreApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

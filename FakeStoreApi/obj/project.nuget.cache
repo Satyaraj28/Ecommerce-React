@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3qvQG89LPtc=",
+  "dgSpecHash": "rkdeObsTLxo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Breaking bad\\React Projects\\React_E-Commerce\\FakeStoreApi\\FakeStoreApi.csproj",
+  "projectFilePath": "C:\\Users\\Breaking bad\\React Projects\\React_E-Commerce\\Ecommerce-React\\FakeStoreApi\\FakeStoreApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Breaking bad\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Breaking bad\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
